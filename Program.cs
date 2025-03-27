@@ -62,14 +62,14 @@
             string response;
             do
             {
-                response = Console.ReadLine().Trim();
+                response = Console.ReadLine().Trim().ToUpper();
                 if (response != "Y" && response != "N")
                 {
                     Console.WriteLine("Invalid response. Please enter Y or N.");
                 }
             } while (response != "Y" && response != "N");
 
-            if (response.Equals("Y", StringComparison.OrdinalIgnoreCase))
+            if (response.Equals("Y"))
             {
                 if (car is FuelCar)
                 {
