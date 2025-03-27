@@ -6,7 +6,7 @@ internal class FuelCar : Car, IFuelable
     {
         if (timeOfRefuel <= DateTime.Now)
         {
-            Console.WriteLine($"Car refueled on {timeOfRefuel}");
+            Console.WriteLine($"Car refueled on {timeOfRefuel.ToString("yyyy-MM-dd HH:mm")}");
         }
         else
         {

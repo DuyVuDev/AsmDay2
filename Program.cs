@@ -57,11 +57,21 @@
             car.DisplayDetails();
             car.ScheduleMaintenance();
 
-            Console.Write("Do you want to refuel/charge? (Y/N)");
-            char response = (char)Console.Read();
-            if (response == 'Y')
+            Console.WriteLine("Do you want to refuel/charge? (Y/N)");
+
+            string response;
+            do
             {
-                if (carType.Equals("F", StringComparison.OrdinalIgnoreCase))
+                response = Console.ReadLine().Trim();
+                if (response != "Y" && response != "N")
+                {
+                    Console.WriteLine("Invalid response. Please enter Y or N.");
+                }
+            } while (response != "Y" && response != "N");
+
+            if (response.Equals("Y", StringComparison.OrdinalIgnoreCase))
+            {
+                if (car is FuelCar)
                 {
                     DateTime refuelDate;
 
@@ -97,10 +107,6 @@
                     }
                     ((ElectricCar)car).Charge(chargeDate);
                 }
-            }
-            else if (response != 'N')
-            {
-                Console.WriteLine("Invalid response. Please enter Y or N.");
             }
         }
     }

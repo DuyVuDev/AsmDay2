@@ -7,7 +7,7 @@ internal class ElectricCar : Car, IChargable
     {
         if (timeOfCharge <= DateTime.Now)
         {
-            Console.WriteLine($"Car charged on {timeOfCharge}");
+            Console.WriteLine($"Car charged on {timeOfCharge.ToString("yyyy-MM-dd HH:mm")}");
         }
         else
         {

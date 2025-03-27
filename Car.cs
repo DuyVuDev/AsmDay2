@@ -22,7 +22,7 @@ namespace AsmDay2
         public void ScheduleMaintenance()
         {
             DateTime NextMaintenanceDate = LastMaintenanceDate.AddMonths(6);
-            Console.WriteLine($"Next Maintenance Date: {NextMaintenanceDate}");
+            Console.WriteLine($"Next Maintenance Date: {NextMaintenanceDate.ToString("yyyy-MM-dd")}");
             if (DateTime.Now > NextMaintenanceDate)
             {
                 Console.WriteLine("Maintenance is due! Please maintain today");
@@ -30,7 +30,7 @@ namespace AsmDay2
         }
         public void DisplayDetails()
         {
-            Console.WriteLine($"Car: {Make} {Model} ({Year})\nLast Maintenance Date: {LastMaintenanceDate}");
+            Console.WriteLine($"Car: {Make} {Model} ({Year})\nLast Maintenance Date: {LastMaintenanceDate.ToString("yyyy-MM-dd")}");
         }
     }
 }
