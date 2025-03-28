@@ -2,17 +2,17 @@ namespace AsmDay2
 {
     public static class Validator
     {
-        private static T ValidateInput<T>(string prompt, Func<string?, (bool, T)> parseFunc, string errorMessage)
+        private static T ValidateInput<T>(string prompt, Func<string?, (bool, T)> conditionFunc, string errorMessage)
         {
             T result;
             while (true)
             {
                 Console.Write(prompt);
                 var input = Console.ReadLine().Trim();
-                var (isValid, parsedResult) = parseFunc(input);
+                var (isValid, validatedResult) = conditionFunc(input);
                 if (isValid)
                 {
-                    result = parsedResult;
+                    result = validatedResult;
                     break;
                 }
                 else
